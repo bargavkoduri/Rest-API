@@ -24,6 +24,7 @@ const data_schema = mongoose.Schema(
         },
         role : {
             type : String,
+            enum : ["user","admin"],
             required : true
         }
     },
