@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const {checkToken} = require("./utils/jwt")
 const addRouter = require('./routes/add')
 const loginRouter = require('./routes/login')
+const viewRouter = require('./routes/view')
 const PORT = 5000;
 const app = express();
 
@@ -32,3 +33,4 @@ app.use(checkToken)
 
 
 app.use("/add",addRouter)
+app.use("/view",viewRouter)
