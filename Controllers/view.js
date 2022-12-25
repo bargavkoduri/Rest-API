@@ -10,7 +10,7 @@ const view_all = (res,type) => {
 
 const view_by_id = (req,res,role) => {
     const {id} = req.params
-    data_schema.find({_id : id,role : role}, {_id: 0,password: 0,createdAt: 0,updatedAt: 0,__v: 0,}).then(
+    data_schema.findOne({_id : id,role : role}, {_id: 0,password: 0,createdAt: 0,updatedAt: 0,__v: 0,}).then(
         (data) => {
             res.send(data)
         }
@@ -27,7 +27,7 @@ const view_by_id_property = (req,res,role) => {
         res.send([])
     }
     else{
-        data_schema.find({_id : id,role : role},{[property] : 1,_id : 0}).then(
+        data_schema.findOne({_id : id,role : role},{[property] : 1,_id : 0}).then(
             (data) => {
                 res.send(data)
             }
