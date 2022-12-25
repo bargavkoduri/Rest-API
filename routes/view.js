@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const router = Router()
-const {view_all,view_by_id,view_by_id_property} = require('../Controllers/view')
+const {view_all,view_by_id,view_by_id_property} = require('../controllers/view')
 
 router.get("/users",(req,res) => {
     view_all(res,"user")

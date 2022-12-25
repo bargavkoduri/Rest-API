@@ -1,4 +1,4 @@
-const data_schema = require("../schemas/user");
+const data_schema = require("../models/user");
 
 const view_all = (res,type) => {
     data_schema.find({role : type},{password : 0,createdAt : 0,updatedAt : 0,__v : 0}).then(

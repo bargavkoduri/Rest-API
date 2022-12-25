@@ -1,4 +1,4 @@
-const data_schema = require("../schemas/user")
+const data_schema = require("../models/user")
 
 const updateFun = (req,res,type) => {
     const li = ["firstName", "middleName", "lastName", "email", "role"];

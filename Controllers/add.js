@@ -1,4 +1,4 @@
-const data_schema = require('../schemas/user')
+const data_schema = require('../models/user')
 const { hashPassword } = require('../utils/helper')
 
 const adduser = async (req,res,type) => {

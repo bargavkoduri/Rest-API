@@ -1,6 +1,6 @@
 const {Router} = require('express')
 const router = Router()
-const {adduser} = require('../Controllers/add')
+const {adduser} = require('../controllers/add')
 
 router.post('/admin',(req,res) => {
     if(req.user.type === "admin"){

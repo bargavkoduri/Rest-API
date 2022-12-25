@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors")
 const {checkToken} = require("./utils/jwt")
 const addRouter = require('./routes/add')
 const loginRouter = require('./routes/login')
@@ -9,6 +10,7 @@ const updateRouter = require('./routes/update')
 const PORT = 5000;
 const app = express();
 
+mongoose.set("strictQuery", true);
 mongoose.connect(
   "mongodb+srv://bargavkoduri:express@firstcluster.mz7kvza.mongodb.net/Assignment?retryWrites=true&w=majority",
   {
@@ -21,6 +23,7 @@ mongoose.connect(
     console.log("Connnected to database");
 });
 
+app.use(cors())
 
 app.use(bodyParser.json(),(err,req,res,next) => {
   if(err)

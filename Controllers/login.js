@@ -1,4 +1,4 @@
-const data_schema = require("../schemas/user");
+const data_schema = require("../models/user");
 const {comparePasswords} = require("../utils/helper")
 const { generateToken } = require("../utils/jwt")
 const loginFun = (req, res) => {
