@@ -37,7 +37,7 @@
                     <br/>
                     will get back a jwt token should send this token with every subsequent request 
                     <br/>
-                    in request auhtorization header : Bearer <pre><Token></pre> 
+                    in request auhtorization header : Bearer &ltToken&gt 
                 </td>
             </tr>
             <tr>
