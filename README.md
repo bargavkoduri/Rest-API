@@ -13,7 +13,7 @@
     <br/>
     <h1>Rest API for <a href="https://drive.google.com/file/d/114AhDA0rn2jGcwGuN1J8DjVzs9tUyMpm/view?usp=share_link">Assignment</a></h1>
     <br/>
-    <h3>After unzipping run npm i</h3>
+    <h3>After unzipping run <b>npm i</b></h3>
     <h5>Default there will be an admin
         <br/>
         email :- admin1@gmail.com
