@@ -44,7 +44,7 @@
                 <td>/add/admin</td>
                 <td>POST</td>
                 <td>To create a new admin</td>
-                <td>Request body should be a json object with property names : firstName,middleName,lastName, password,email,role,department,confirmPassword
+                <td>Request body should be a json object with property names : firstName ,middleName ,lastName ,password ,email ,department, confirmPassword
                     <br/>
                     department and middleName are optional and the remaining properties are mandatary.
                     <br/>
@@ -69,7 +69,7 @@
                 <td>Request body be a json object with properties id having unique user id (mongodb document id)
                     <br/> 
                     and can contain any of the following properties
-                    firstName ,middleName ,lastName ,email ,role ,department.
+                    firstName ,middleName ,lastName ,email ,department.
                     <br/>
                     any other properties in Request body will return a error response.
                     <br/>
