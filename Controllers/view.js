@@ -19,7 +19,7 @@ const view_by_id = (req,res,role) => {
 }
 
 const view_by_id_property = (req,res,role) => {
-    const li = ["firstName", "MiddleName", "LastName", "email", "role"];
+    const li = ["firstName", "MiddleName", "LastName", "email", "role","department"];
     const {id} = req.params
     const {property} = req.params
     const valid_prop = li.find(item => item === property)

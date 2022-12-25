@@ -3,12 +3,12 @@ const { hashPassword } = require('../utils/helper')
 
 const adduser = async (req,res,type) => {
     if(!req.body.password || !req.body.confirmPassword){
-        res.sendStatus(400)
+        res.status(400).send({err : "Necessary fields must be present in body"});
     }
     else if(req.body.password !== req.body.confirmPassword){
         res.status(409).send({err : "Passwords doesn't match"})
     } else{
-        const li = ['firstName','middleName','lastName','password','email','role']
+        const li = ['firstName','middleName','lastName','password','email','role','department']
         let count = 0
         req.body.role = type;
         delete req.body.confirmPassword
@@ -18,7 +18,7 @@ const adduser = async (req,res,type) => {
                 break
             count += 1
         }
-        if(count === 6 || (count === 5 && req.body.middleName === undefined)){
+        if(count === 7 || (count === 6 && (req.body.middleName === undefined || req.body.department === undefined)) || (count === 5 && req.body.middleName === undefined && req.body.department === undefined)){
              req.body.password = hashPassword(req.body.password);
             const user = await data_schema.findOne({email : req.body.email})
             if(user){
@@ -30,7 +30,7 @@ const adduser = async (req,res,type) => {
                 })
             } 
         } else {
-            res.sendStatus(400)
+            res.status(400).send({err : "Neceesary fields must be present in body"})
         }
     }
 }

@@ -1,7 +1,7 @@
 const data_schema = require("../models/user")
 
 const updateFun = (req,res,type) => {
-    const li = ["firstName", "middleName", "lastName", "email", "role"];
+    const li = ["firstName", "middleName", "lastName", "email", "role","department"];
     if(req.body.id === undefined)
         res.send("Need Id to update")
     else{

@@ -7,7 +7,7 @@ const data_schema = mongoose.Schema(
             required : true
         },
         middleName : {
-            type : String,
+            type : String
         },
         lastName : {
             type : String,
@@ -26,6 +26,9 @@ const data_schema = mongoose.Schema(
             type : String,
             enum : ["user","admin"],
             required : true
+        },
+        department : {
+            type : String
         }
     },
     { timestamps : true }
