@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
 const {checkToken} = require("./utils/jwt")
 const addRouter = require('./routes/add')
 const loginRouter = require('./routes/login')
@@ -23,8 +22,12 @@ mongoose.connect(
 });
 
 
-app.use(bodyParser.json())
-app.use(cookieParser())
+app.use(bodyParser.json(),(err,req,res,next) => {
+  if(err)
+    res.sendStatus(400)
+  else
+    next()
+})
 
 
 // Login Route

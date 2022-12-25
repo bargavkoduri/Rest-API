@@ -10,18 +10,20 @@ const updateFun = (req,res,type) => {
         const properties = Object.getOwnPropertyNames(req.body)
         for(let i = 0;i < properties.length;i++){
             if(!li.includes(properties[i])){
-                return res.send("Invalid field names to update")
+                return res.status(400).send({err : "Invalid field names to update"})
             }
         }
         data_schema.findOneAndUpdate({_id : id,role : type},req.body,(err,data) => {
             if(err){
                 if(err.codeName && err.codeName === "DuplicateKey")
-                    return res.status(409).send({err : "Email already exists"})
+                    res.status(409).send({err : "Email already exists"})
+                else if(err.reason)
+                    res.status(200).send({msg : "User not found"})
                 else
                     res.status(500).send({err : "Unable to update"})
             }
             else if(!data){
-                res.status(200).send({err : "Unable to find User"})
+                res.status(200).send({msg : "User not found"})
             }
             else{
                 res.sendStatus(200)
