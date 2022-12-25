@@ -32,7 +32,7 @@
             <tr>
                 <td>/login</td>
                 <td>POST</td>
-                <td>logging in of admin or user</td>
+                <td>logging in of an admin or an user</td>
                 <td>Request body should be a json object with properties email and password else will get back an err msg.
                     <br/>
                     will get back a jwt token should send this token with every subsequent request 
