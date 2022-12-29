@@ -11,7 +11,7 @@
 
 <body>
     <br/>
-    <h1>Rest API for <a href="https://drive.google.com/file/d/114AhDA0rn2jGcwGuN1J8DjVzs9tUyMpm/view?usp=share_link">Assignment</a></h1>
+    <h1>Rest API</h1>
     <br/>
     <h3>After unzipping run 'npm i' to install required dependencies.</h3>
     <h3>Run 'node index.js' to run the server.</h3>
